@@ -1,0 +1,56 @@
+<!doctype>
+<html>
+<head>
+
+    <title> It Also Stares </title>
+    <meta charset="UTF-8"/>
+    <link href="game.css" rel="stylesheet" />
+    <script src="game.js"></script>
+    <script src="player.js"></script>
+    <script src="location.js"></script>
+
+
+</head>
+<body>
+
+    <header>
+        <h1> It Also Stares </h1>
+    </header>
+
+    <main id="game">
+    
+        <output id="scene">
+            <p id="descrip">
+               You awake to find yourself nowhere. Your body is no longer visible but your consciousness is still active. You begin to move. 
+            </p>
+            <label for="action"> What will you do? </label>
+        </output>
+
+        <section>
+            <input id="action" type="text" placeholder="Enter an action here..."/>
+        </section>
+
+    </main>
+
+    <aside id="inventory">
+        <h1> Inventory </h1>
+        <ul id="inventorylist">
+        </ul>
+    </aside>
+
+    <aside id="help">
+        <h1> Available Actions </h1>
+        <ul>
+	<li> pickup </li>
+	<li> drop </li>
+	<li> goto </li>
+        </ul>
+    </aside>
+
+    <footer>
+        Copyright (c) 2014 YOUR NAME HERE. All rights reserved.
+    </footer>
+
+</body>
+</html>
+
