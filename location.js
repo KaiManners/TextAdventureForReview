@@ -72,7 +72,7 @@ var cafeDescrip = "Kim considers herself some sort of pessimist. How can one fin
 var office = new Location("Hospital", officeDescrip, "Note", "It reads, 'Physical Ailment: Unknown. Life Expectancy: At most a year. Prescribed medication: none.'", "Journal", "Ivan felt as though everything up to this point in his life was leading to his illness. His failure to live authentically now came in full force. Death was coming for him, but he never truly lived anyways, so there wasn't much to lose.");
 
 //introduction
-var unknown = new Location("Unknown", unknownDescrip);
+var unknown = new Location("Unknown", unknownDescrip, "Glass", "You hold it but it doesn't cut you. You don't see yourself.", "Sand", "You're unable to hold it, as if your hand were made up of tiny straws.");
 
 //the implications of war
 var battlefield = new Location("Battlefield", battlefieldDescrip, "TranqGun", "It seems to belong to the soldier you've been following. Funny how he uses a tranquilzer as opposed to a real gun.", "Wallet", "Inside is a picture of a child and a beautiful woman. Blood seems to soak the wallet and not much money was in it in the first place.");
