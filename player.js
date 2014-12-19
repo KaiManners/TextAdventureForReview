@@ -42,8 +42,7 @@ var player = {
 		var item = itemName.toLowerCase();
 		if(item == this.currentLocation.item1){
 			display(this.currentLocation.item1descrip);
-		}
-		if(item == this.currentLocation.item2){
+		}else if(item == this.currentLocation.item2){
 			display(this.currentLocation.item2descrip);
 		}else{
 			display("What are you looking at?");
