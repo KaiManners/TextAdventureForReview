@@ -88,6 +88,7 @@ var player = {
 			if(location == availableLocations[i]){
 				if(this.items.length == 2){
 						player.drop(this.items[i]);
+						player.drop(this.items[i]);
 						var object = map.listConnect(this.currentLocation, 0);
 						this.currentLocation = object[i];
 						display(this.currentLocation.descrip);
