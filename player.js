@@ -68,7 +68,7 @@ var player = {
 		}
 	},*/
 	
-	goto : function(location){
+	goto : function(newLoc){
 		/*var x;
 		if(Math.random() > 0.5){
 			x = this.currentLocation.item1;
@@ -76,6 +76,7 @@ var player = {
 			x = this.currentLocation.item2;
 		}*/
 			
+		var location = newLoc.toLowerCase();
 		var availableLocations = map.listConnect(this.currentLocation);
 		for(var i = 0; i < availableLocations.length; i++){
 			if(location == availableLocations[i]){
