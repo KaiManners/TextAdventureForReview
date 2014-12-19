@@ -9,14 +9,14 @@ var player = {
 		itemOne = this.currentLocation.item1;
 		itemTwo = this.currentLocation.item2;
 		if(item == itemOne){
-			player.items.push(item);
+			this.items.push(item);
 			itemName = document.createElement(item)
 			itemName.innerHTML = item;
 			addedItem.appendChild(itemName);
 			addedItem.setAttribute("id", item);
 			itemList.appendChild(addedItem);        
 		}else if(item == itemTwo){
-			player.items.push(item);
+			this.items.push(item);
 			itemName = document.createElement(item)
 			itemName.innerHTML = item;
 			addedItem.appendChild(itemName);
@@ -28,15 +28,21 @@ var player = {
 	},
 
 	drop : function (itemName){
-		var item = itemName.toLowerCase();
-		itemList = document.getElementById("inventorylist");
-		itemName = document.getElementById(item);
-		itemList.removeChild(itemName);
-		/*searchList = document.getElementById("realFoundItems");
-		searchNames = document.querySelector(".list");
-		searchList.removeChild(searchNames);*/
+	var item = itemName.toLowerCase();
+	for(i = 0; i < this.items.length; i++){
+		if(item == this.items[i]){
+			itemList = document.getElementById("inventorylist");
+			itemName = document.getElementById(item);
+			itemList.removeChild(itemName);
+        		this.items.splice(i, 1);
+        		// after removing item from the player, add it to the current location
+    		} else {
+        		display("Can't find.");
+			//display feedback indicating that the player doesn't have item
+    		}
+		}
 	},
-			
+		
 
 	lookat : function(itemName){
 		var item = itemName.toLowerCase();
@@ -81,8 +87,8 @@ var player = {
 		for(var i = 0; i < availableLocations.length; i++){
 			if(location == availableLocations[i]){
 				if(this.items.length == 2){
-						player.drop(this.items[0]);
-						player.drop(this.items[1]);
+						//player.drop(this.items[0]);
+						//player.drop(this.items[1]);
 						var object = map.listConnect(this.currentLocation, 0);
 						this.currentLocation = object[i];
 						display(this.currentLocation.descrip);
