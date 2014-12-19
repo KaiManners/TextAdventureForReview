@@ -41,8 +41,7 @@ var player = {
 		var availableLocations = map.listConnect(this.currentLocation);
 		for(i = 0; i < availableLocations.length; i++){
 			if(loc == availableLocations[i]){
-				var locations = map.listConnect(this.currentLocation);
-				this.currentLocation = locations[i];
+				this.currentLocation = availableLocations[i];
 				display(this.currentLocation.descrip);
 
 			}
