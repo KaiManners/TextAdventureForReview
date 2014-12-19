@@ -1,6 +1,6 @@
 var player = {
 	items: [],
-	currentLocation : nightclub,
+	currentLocation : unknown,
 
 	pickup : function(item){
 		itemList = document.querySelector("#inventorylist");
@@ -24,7 +24,7 @@ var player = {
 	}
 	},
 
-	lookCloser : function(item){
+	look : function(item){
 		if(item == this.currentLocation.item1){
 			display(this.currentLocation.item1descrip);
 		}
@@ -33,33 +33,34 @@ var player = {
 		}
 	},
 
-	availableLocations : function(){
-		display(map.listConnect(this.currentLocation));
+	wherecanigo : function(){
+		var loc = map.listConnect(this.currentLocation);
+		display(loc);
 	},
-
-	goto : function(loc){
+	
+	goto : function( location ){
+		var x;
+		if(Math.random() > 0.5){
+			x = this.currentLocation.item1;
+		}else{
+			x = this.currentLocation.item2;
+		}
+			
 		var availableLocations = map.listConnect(this.currentLocation);
-		for(i = 0; i < availableLocations.length; i++){
-			if(loc == availableLocations[i]){
-				this.currentLocation = availableLocations[i];
-				display(this.currentLocation.descrip);
-
+		for(var i = 0; i < availableLocations.length; i++){
+			if(location == availableLocations[i]){
+				if(player.items[i] == x){
+						var object = map.listConnect(this.currentLocation, 0);
+						this.currentLocation = object[i];
+						display(this.currentLocation.descrip);
+						break;
+				}
 			}
-		}
+		display("First collect both your items!")
+		};
 	},
 	
-	
-	/*
-	drop : function(item){
-		for(i in this.items){
-			if(this.items[i] === item){
-					this.items.splice(i, 1);
-					document.getElementById("item").remove();
-			}
-		}
-	},*/
-
-	displayCurrentLocation : function(){
+	whereami : function(){
 		var location = document.querySelector("#realCurrentLoc");
 		location.innerHTML = player.currentLocation.name;
 	},

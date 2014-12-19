@@ -30,20 +30,30 @@ var map = {
 	halfConnect : function(loc1, loc2){
 	var i = this.locations.indexOf(loc1);
 	var j = this.locations.indexOf(loc2);
-	this.connections[j][i] = 0; 
+	this.connections[i][j] = 1; 
+	},
+	
+	listConnect : function(location, type){
+		var locationObjects = [];
+		var locationNames = [];
+		var indexOfLoc = this.locations.indexOf(location);
+		var row = this.connections[indexOfLoc];
+		for(var i = 0; i < row.length; i++){
+			if(row[i] == 1){
+				var obj = this.locations[i];
+				locationObjects.push(obj)
+				var name = obj.name;
+				locationNames.push(name);
+			}			
+		}
+
+		if(type == 0){
+			return locationObjects;	
+		}else{
+			return locationNames;
+		}
 	},
 
-	listConnect : function(loc){
-	var availableLocations = [];
-	var currentLocation = this.locations.indexOf(loc);
-	var row = this.connections[currentLocation];
-	for(i = 0;i < row.length; i++){
-		if(row[i] == 1){
-			availableLocations.push(this.locations[i].name);
-		}
-	}
-	return availableLocations;
-	},
 	
 }
 
@@ -59,7 +69,7 @@ var cafeDescrip = "Kim considers herself some sort of pessimist. How can one fin
 
 
 //the unexpected quality of death
-var office = new Location("Doctor's Office", officeDescrip, "Note", "It reads, 'Physical Ailment: Unknown. Life Expectancy: At most a year. Prescribed medication: none.'", "Journal", "Ivan felt as though everything up to this point in his life was leading to his illness. His failure to live authentically now came in full force. Death was coming for him, but he never truly lived anyways, so there wasn't much to lose.");
+var office = new Location("Hospital", officeDescrip, "Note", "It reads, 'Physical Ailment: Unknown. Life Expectancy: At most a year. Prescribed medication: none.'", "Journal", "Ivan felt as though everything up to this point in his life was leading to his illness. His failure to live authentically now came in full force. Death was coming for him, but he never truly lived anyways, so there wasn't much to lose.");
 
 //introduction
 var unknown = new Location("Unknown", unknownDescrip);
@@ -77,20 +87,20 @@ var room = new Location("Room", roomDescrip, "Picture", "It's a picture of Rosa 
 var nightclub = new Location("Nightclub", nightclubDescrip, "Money", "200 dollars left on the dresser. He'd rather give up money than be vulnerable to any woman ever again.", "Photo", "The photo is a bit wrinkled on the edges as it peaks out of the man's wallet. It seems to have been crumpled up but then straighted out.");
 
 //living with a mark 
-var house = new Location("Mark's House", houseDescrip, "Journal", "It's been ten years since he's had this illness. He doesn't go outside much, but when he does, he wishes he were at least pallatable to the human eye. Nature creates everything beautiful; everything but him.", "Comic Book", "It's a comic book of Superman. How the man wishes he could be strong like the Man of Steel. To take flight and to save people. Superman never gave up on people, but it's hard for the man not to when so many can't love him. But he looks past it anyway.");
+var house = new Location("House", houseDescrip, "Journal", "It's been ten years since he's had this illness. He doesn't go outside much, but when he does, he wishes he were at least pallatable to the human eye. Nature creates everything beautiful; everything but him.", "Comic Book", "It's a comic book of Superman. How the man wishes he could be strong like the Man of Steel. To take flight and to save people. Superman never gave up on people, but it's hard for the man not to when so many can't love him. But he looks past it anyway.");
 
 //things aren't too bad
 var cafe = new Location("Cafe", cafeDescrip, "Coffee", "Coffee is shared between the man and woman. Bittersweet and warm.", "Notepad", "The only thing written on the notepad is: 'Light Amidst the Darkness.'");
 
 map.locations.push(unknown, office, battlefield, bar, room, nightclub, house, cafe);
 
-map.connect(unknown, office);
-map.connect(office, battlefield); 
-map.connect(battlefield, bar); 
-map.connect(bar, nightclub);
-map.connect(nightclub, room);
-map.connect(room, house);
-map.connect(house, cafe);
+map.halfConnect(unknown, office);
+map.halfConnect(office, battlefield); 
+map.halfConnect(battlefield, bar); 
+map.halfConnect(bar, nightclub);
+map.halfConnect(nightclub, room);
+map.halfConnect(room, house);
+map.halfConnect(house, cafe);
 
 
 
