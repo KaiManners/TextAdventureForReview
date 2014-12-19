@@ -61,6 +61,8 @@ var player = {
 		for(var i = 0; i < availableLocations.length; i++){
 			if(location == availableLocations[i]){
 				if(this.items.length == 2){
+						player.drop(this.currentLocation.item1);
+						player.drop(this.currentLocation.item2);
 						var object = map.listConnect(this.currentLocation, 0);
 						this.currentLocation = object[i];
 						display(this.currentLocation.descrip);
@@ -69,7 +71,7 @@ var player = {
 				
 			}
 		display("First collect both your items!")
-		};
+		}
 	},
 	
 	whereami : function(){
