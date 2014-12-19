@@ -1,6 +1,6 @@
 var player = {
 	items: [],
-	currentLocation : unknown,
+	currentLocation : battlefield,
 
 	pickup : function(item){
 		itemList = document.querySelector("#inventorylist");
@@ -12,19 +12,28 @@ var player = {
 			itemName = document.createElement(item)
 			itemName.innerHTML = item;
 			addedItem.appendChild(itemName);
+			addedItem.setAttribute("id", item);
 			itemList.appendChild(addedItem);        
 		}else if(item == itemTwo){
 			player.items.push(item);
 			itemName = document.createElement(item)
 			itemName.innerHTML = item;
 			addedItem.appendChild(itemName);
+			addedItem.setAttribute("id", item);
 			itemList.appendChild(addedItem);        
 		}else{
 			display("Nothing here");		
 	}
 	},
 
-	look : function(item){
+	drop : function (item){
+		itemList = document.getElementById("inventorylist");
+		itemName = document.getElementById(item);
+		itemList.removeChild(itemName);
+	},
+			
+
+	lookat : function(item){
 		if(item == this.currentLocation.item1){
 			display(this.currentLocation.item1descrip);
 		}
@@ -35,10 +44,12 @@ var player = {
 
 	wherecanigo : function(){
 		var loc = map.listConnect(this.currentLocation);
-		display(loc);
+		display("You can go to the " + loc);
 	},
+
 	
-	goto : function( location ){
+	
+	goto : function(location){
 		var x;
 		if(Math.random() > 0.5){
 			x = this.currentLocation.item1;
