@@ -42,6 +42,8 @@ var player = {
 		}
 		if(item == this.currentLocation.item2){
 			display(this.currentLocation.item2descrip);
+		}else{
+			display("What are you looking at?");
 		}
 	},
 
@@ -97,16 +99,16 @@ var player = {
 		
 	
 
-	searchFor : function(input){
+	searchfor : function(input){
 			var foundItems = document.querySelector("#foundItems");
 			var list = document.createElement("li");
 			list.setAttribute("class", "list");
-			if(input == "FirstItem"){
+			if(input == "firstitem"){
 				var text = document.createTextNode(this.currentLocation.item1);	
 				list.appendChild(text);
 				foundItems.appendChild(list);
 				display("Found a " + this.currentLocation.item1);
-			}else if(input == "SecondItem"){
+			}else if(input == "seconditem"){
 				var text = document.createTextNode(this.currentLocation.item2);	
 				list.appendChild(text);
 				foundItems.appendChild(list);
