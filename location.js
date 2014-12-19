@@ -69,28 +69,28 @@ var cafeDescrip = "Kim considers herself some sort of pessimist. How can one fin
 
 
 //the unexpected quality of death
-var office = new Location("Hospital", officeDescrip, "Note", "It reads, 'Physical Ailment: Unknown. Life Expectancy: At most a year. Prescribed medication: none.'", "Journal", "Ivan felt as though everything up to this point in his life was leading to his illness. His failure to live authentically now came in full force. Death was coming for him, but he never truly lived anyways, so there wasn't much to lose.");
+var office = new Location("hospital", officeDescrip, "note", "It reads, 'Physical Ailment: Unknown. Life Expectancy: At most a year. Prescribed medication: none.'", "journal", "Ivan felt as though everything up to this point in his life was leading to his illness. His failure to live authentically now came in full force. Death was coming for him, but he never truly lived anyways, so there wasn't much to lose.");
 
 //introduction
-var unknown = new Location("Unknown", unknownDescrip, "Glass", "You hold it but it doesn't cut you. You don't see yourself.", "Sand", "You're unable to hold it, as if your hand were made up of tiny straws.");
+var unknown = new Location("unknown", unknownDescrip, "glass", "You hold it but it doesn't cut you. You don't see yourself.", "sand", "You're unable to hold it, as if your hand were made up of tiny straws.");
 
 //the implications of war
-var battlefield = new Location("Battlefield", battlefieldDescrip, "TranqGun", "It seems to belong to the soldier you've been following. Funny how he uses a tranquilzer as opposed to a real gun.", "Wallet", "Inside is a picture of a child and a beautiful woman. Blood seems to soak the wallet and not much money was in it in the first place.");
+var battlefield = new Location("battlefield", battlefieldDescrip, "tranqgun", "It seems to belong to the soldier you've been following. Funny how he uses a tranquilzer as opposed to a real gun.", "wallet", "Inside is a picture of a child and a beautiful woman. Blood seems to soak the wallet and not much money was in it in the first place.");
 
 //the purpose of drinking
-var bar = new Location("Pub", barDescrip, "Beer", "5% alcohol content. The beer bottle is one of many consumed by the middle-aged drunkard.", "Receipt", "Five beers, two 'special drinks', and a shot of vodka. All for one man.");
+var bar = new Location("pub", barDescrip, "beer", "5% alcohol content. The beer bottle is one of many consumed by the middle-aged drunkard.", "receipt", "Five beers, two 'special drinks', and a shot of vodka. All for one man.");
 
 //how to mourn
-var room = new Location("Room", roomDescrip, "Picture", "It's a picture of Rosa and her now-deceased boyfriend. She mutters that she wish she never met him to avoid such pain.", "Voicemail", "The voicemail goes, 'Hi, it's Danny. I can't come to phone right now, but leave your name and number and I'll get back to you.' Rosa repeated it again.");
+var room = new Location("room", roomDescrip, "picture", "It's a picture of Rosa and her now-deceased boyfriend. She mutters that she wish she never met him to avoid such pain.", "voicemail", "The voicemail goes, 'Hi, it's Danny. I can't come to phone right now, but leave your name and number and I'll get back to you.' Rosa repeated it again.");
 
 //paid company
-var nightclub = new Location("Nightclub", nightclubDescrip, "Money", "200 dollars left on the dresser. He'd rather give up money than be vulnerable to any woman ever again.", "Photo", "The photo is a bit wrinkled on the edges as it peaks out of the man's wallet. It seems to have been crumpled up but then straighted out.");
+var nightclub = new Location("nightclub", nightclubDescrip, "money", "200 dollars left on the dresser. He'd rather give up money than be vulnerable to any woman ever again.", "photo", "The photo is a bit wrinkled on the edges as it peaks out of the man's wallet. It seems to have been crumpled up but then straighted out.");
 
 //living with a mark 
-var house = new Location("House", houseDescrip, "Journal", "It's been ten years since he's had this illness. He doesn't go outside much, but when he does, he wishes he were at least pallatable to the human eye. Nature creates everything beautiful; everything but him.", "Comic Book", "It's a comic book of Superman. How the man wishes he could be strong like the Man of Steel. To take flight and to save people. Superman never gave up on people, but it's hard for the man not to when so many can't love him. But he looks past it anyway.");
+var house = new Location("house", houseDescrip, "journal", "It's been ten years since he's had this illness. He doesn't go outside much, but when he does, he wishes he were at least pallatable to the human eye. Nature creates everything beautiful; everything but him.", "comic", "It's a comic book of Superman. How the man wishes he could be strong like the Man of Steel. To take flight and to save people. Superman never gave up on people, but it's hard for the man not to when so many can't love him. But he looks past it anyway.");
 
 //things aren't too bad
-var cafe = new Location("Cafe", cafeDescrip, "Coffee", "Coffee is shared between the man and woman. Bittersweet and warm.", "Notepad", "The only thing written on the notepad is: 'Light Amidst the Darkness.'");
+var cafe = new Location("cafe", cafeDescrip, "coffee", "Coffee is shared between the man and woman. Bittersweet and warm.", "notepad", "The only thing written on the notepad is: 'Light Amidst the Darkness.'");
 
 map.locations.push(unknown, office, battlefield, bar, room, nightclub, house, cafe);
 
