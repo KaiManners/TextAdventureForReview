@@ -50,7 +50,7 @@ var player = {
 		display("You can go to the " + loc);
 	},
 
-	
+	/*
 	goto : function(location){
 		var availableLocations = map.listConnect(this.currentLocation);
 		for(var i = 0; i < availableLocations.length; i++){
@@ -62,32 +62,32 @@ var player = {
 			}
 		display("First collect both your items!")
 		}
-	},
+	},*/
 	
-	/*goto : function(location){
-		var x;
+	goto : function(location){
+		/*var x;
 		if(Math.random() > 0.5){
 			x = this.currentLocation.item1;
 		}else{
 			x = this.currentLocation.item2;
-		}
+		}*/
 			
 		var availableLocations = map.listConnect(this.currentLocation);
 		for(var i = 0; i < availableLocations.length; i++){
 			if(location == availableLocations[i]){
-				//if(this.items.length
+				if(this.items.length == 2){
 						player.drop(this.items[0]);
 						player.drop(this.items[1]);
 						var object = map.listConnect(this.currentLocation, 0);
 						this.currentLocation = object[i];
 						display(this.currentLocation.descrip);
 						break;
-				//}
+				}
 				
 			}
 		display("First collect both your items!")
 		}
-	},*/
+	},
 	
 	
 	whereami : function(){
