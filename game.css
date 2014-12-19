@@ -47,10 +47,12 @@ aside#foundItems{
 
 aside {
     width: 20%;
+    
 }
 
 aside#help {
     left: 0%;
+    text-align: left;
 }
 
 
