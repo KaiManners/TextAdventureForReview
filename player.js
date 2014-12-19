@@ -2,7 +2,8 @@ var player = {
 	items: [],
 	currentLocation : unknown,
 
-	pickup : function(item){
+	pickup : function(itemName){
+		var item = itemName.toLowerCase();
 		itemList = document.querySelector("#inventorylist");
 		addedItem = document.createElement("li");
 		itemOne = this.currentLocation.item1;
@@ -26,7 +27,8 @@ var player = {
 	}
 	},
 
-	drop : function (item){
+	drop : function (itemName){
+		var item = itemName.toLowerCase();
 		itemList = document.getElementById("inventorylist");
 		itemName = document.getElementById(item);
 		itemList.removeChild(itemName);
@@ -36,7 +38,8 @@ var player = {
 	},
 			
 
-	lookat : function(item){
+	lookat : function(itemName){
+		var item = itemName.toLowerCase();
 		if(item == this.currentLocation.item1){
 			display(this.currentLocation.item1descrip);
 		}
@@ -99,7 +102,8 @@ var player = {
 		
 	
 
-	searchfor : function(input){
+	searchfor : function(word){
+			input = word.toLowerCase();
 			var foundItems = document.querySelector("#foundItems");
 			var list = document.createElement("li");
 			list.setAttribute("class", "list");
