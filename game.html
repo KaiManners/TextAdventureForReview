@@ -5,9 +5,11 @@
     <title> It Also Stares </title>
     <meta charset="UTF-8"/>
     <link href="game.css" rel="stylesheet" />
-    <script src="game.js"></script>
-    <script src="player.js"></script>
     <script src="location.js"></script>
+    <script src="player.js"></script>
+    <script src="game.js"></script>
+   
+
 
 
 </head>
@@ -20,10 +22,9 @@
     <main id="game">
     
         <output id="scene">
-            <p id="descrip">
-               You awake to find yourself nowhere. Your body is no longer visible but your consciousness is still active. You begin to move. 
+            <p id="descrip"> 
             </p>
-            <label for="action"> What will you do? </label>
+            <label for="action"> </label>
         </output>
 
         <section>
@@ -41,14 +42,29 @@
     <aside id="help">
         <h1> Available Actions </h1>
         <ul>
-	<li> pickup </li>
-	<li> drop </li>
-	<li> goto </li>
+	<li id="pickup"> pickup (item)- pick up an item </li>
+	<li id="drop"> drop (item) - drop an item </li>
+	<li id="goto"> goto (location) - go to available location </li>
+	<li id="searc"> searchFor (FirstItem) or (SecondItem) - find items in area </li>
+	<li id="details"> lookcloser (item) - pay more attention to an item </li>
+	<li id="displayLoc"> displayCurrentLocation </li>
         </ul>
     </aside>
 
+    <aside id="currentLoc">
+	<h1> Current Location </h1>
+	<ul id="realCurrentLoc">
+	</ul>
+    </aside>
+
+    <aside id="foundItems">
+	<h1> Found Items </h1>
+	<ul id="realFoundItems">
+	</ul>
+    </aside>
+
     <footer>
-        Copyright (c) 2014 YOUR NAME HERE. All rights reserved.
+        Copyright (c) 2014 Kai "Master G-Shock" Manners. All rights reserved.
     </footer>
 
 </body>

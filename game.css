@@ -24,13 +24,36 @@ aside, main {
     height: 80%;
 }
 
+aside#currentLoc{
+     left: 0;
+     top: 50%;
+}
+
+#realCurrentLoc{
+     left:0;
+     top: 60%;
+     text-align: center;
+}
+
+aside#foundItems{
+     right:0;
+     top: 50%;
+}
+
+#realFoundItems{
+     right:0;
+     top: 60%;
+}
+
 aside {
     width: 20%;
 }
 
 aside#help {
-    left: 0;
+    left: 0%;
 }
+
+
 
 aside#inventory {
     right: 0;

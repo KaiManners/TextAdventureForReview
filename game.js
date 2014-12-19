@@ -1,80 +1,35 @@
 function interpret(string){
-	var cmd = {}, tokens = input.trim().toLowerCase().split(" ");
-	cmd.action = tokens.shift();
-	cmd.target = tokens.join(" ");
-	return cmd;
-}
-
-function execute (command) {
-	var action1 = command.action;
-	var target1 = command.target;
-	player[action1](target1);
-}
-
-function report(result){
-	displayActions();
-	displayInventory();
-	//displayScene();
+	var stuff = {}
+	var FirstStep = string.trim();
+	var SecondStep = FirstStep.split(" ");
+	var ThirdStep = SecondStep.shift();
+	stuff.action = ThirdStep;
+	var FourthStep = SecondStep.join();
+	stuff.object = FourthStep;
+	return stuff;
 };
 
-function displayActions() {
-    var field, action, actionList;
-    actionList = document.querySelector("#help > ul");
-    clearContent(actionList);
-    for (field in player) {
-        if (player[field] instanceof Function) {
-            action = document.createElement("li");
-            action.textContent = field;
-            actionList.appendChild(action);
-        }
-    }
-}
+var execute = function (command) {
+	var action = command.action;
+	var object = command.object;
+	player[action](object);
+};
 
-function displayInventory() {
-    var i, item, inventory;
-    inventory = document.querySelector("#inventory > ul");
-    clearContent(inventory);
-    for (i in player.items) {
-        item = document.createElement ("li");
-        item.textContent = player.items[i];
-        inventory.appendChild(item);
-    }
-}
-
-
-function report (result){
-	for (i in newPlayer.items){
-		var content = document.querySelectorAll("#inventory > ul");
-		return content; 
-	}
-}
-
-function gameIntro(){
-	var inputBox = document.querySelector("input");
-	var listener = function(event) { 
-		if (event.keyCode == 13){
-			event.target.removeEventListener("keyup", listener);
-			customizePlayer(this.value);
-			gameStart();
-		}
-	}
-	inputBox.addEventListener("keyup", listener);
-}
 
 function gameStep (input){
-	var cmd = interpret(input);
-	var result = execute(cmd);
-	report(result);
+	var command = interpret(input);	
+	execute(command);
 }
 
 function gameStart(){
+	display(player.currentLocation.descrip);
 	var inputBox = document.querySelector("input");
 	inputBox.addEventListener("keyup", function(event) {
 		if (event.keyCode === 13){
 			gameStep(this.value);
 
 		}
-	}
+	});
 
 }
 
