@@ -51,8 +51,20 @@ var player = {
 	},
 
 	
-	
 	goto : function(location){
+		var availableLocations = map.listConnect(this.currentLocation);
+		for(var i = 0; i < availableLocations.length; i++){
+			if(location == availableLocations[i]){
+				var object = map.listConnect(this.currentLocation, 0);
+				this.currentLocation = object[i];
+				display(this.currentLocation.descrip);
+				break;
+			}
+		display("First collect both your items!")
+		}
+	},
+	
+	/*goto : function(location){
 		var x;
 		if(Math.random() > 0.5){
 			x = this.currentLocation.item1;
@@ -63,19 +75,19 @@ var player = {
 		var availableLocations = map.listConnect(this.currentLocation);
 		for(var i = 0; i < availableLocations.length; i++){
 			if(location == availableLocations[i]){
-				if(this.items.length == 2){
+				//if(this.items.length
 						player.drop(this.items[0]);
 						player.drop(this.items[1]);
 						var object = map.listConnect(this.currentLocation, 0);
 						this.currentLocation = object[i];
 						display(this.currentLocation.descrip);
 						break;
-				}
+				//}
 				
 			}
 		display("First collect both your items!")
 		}
-	},
+	},*/
 	
 	
 	whereami : function(){
