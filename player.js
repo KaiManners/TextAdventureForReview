@@ -49,7 +49,8 @@ var player = {
 		}
 	},
 	
-
+	
+	/*
 	drop : function(item){
 		for(i in this.items){
 			if(this.items[i] === item){
@@ -57,7 +58,7 @@ var player = {
 					document.getElementById("item").remove();
 			}
 		}
-	},
+	},*/
 
 	displayCurrentLocation : function(){
 		var location = document.querySelector("#realCurrentLoc");
