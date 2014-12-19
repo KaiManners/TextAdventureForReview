@@ -60,12 +60,13 @@ var player = {
 		var availableLocations = map.listConnect(this.currentLocation);
 		for(var i = 0; i < availableLocations.length; i++){
 			if(location == availableLocations[i]){
-				if(player.items[i] == x){
+				if(this.items.length == 2){
 						var object = map.listConnect(this.currentLocation, 0);
 						this.currentLocation = object[i];
 						display(this.currentLocation.descrip);
 						break;
 				}
+				
 			}
 		display("First collect both your items!")
 		};
