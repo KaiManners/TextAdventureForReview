@@ -10,14 +10,15 @@ function Location(name, descrip, item1, item1descrip, item2, item2descrip){
 var map = {
 	locations : [],
 	connections : [
-	[0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0],
-	[0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0],
 	],
 
 	connect : function(loc1, loc2){
@@ -66,7 +67,7 @@ var roomDescrip = "Rosa lies on her bed. Her face is pressed against a pillow wh
 var nightclubDescrip = "John has hired an escort for the night. He normally doesn't do that sort of thing and he wonders why he's even doing it. The woman prepares herself in the restroom while John waits anxiously.";
 var houseDescrip = "Mark has lived by himself for a long time. He's had a physical disability and because of this, he doesn't have much company. He's embarrased by his ailments and feels like he'd impose on others if he were to meet people. You read through his journal.";
 var cafeDescrip = "Kim considers herself some sort of pessimist. How can one find any joy in a world where people starve, die alone, and live in pain? John finds her persistent cynicism irritating and even juvenille. While he doesn't entirely disagree with her, in spite of all this, he can't believe this. He continues to speak.";
-
+var nothingnessDescrip = "You've peered into the lives of many and you have many thoughts about it, none of which matter. Whatever you happen to be, you decide your own standing amidst the awfulness and serendipity. You decide that it's come to an end."
 
 //the unexpected quality of death
 var office = new Location("hospital", officeDescrip, "note", "It reads, 'Physical Ailment: Unknown. Life Expectancy: At most a year. Prescribed medication: none.'", "journal", "Ivan felt as though everything up to this point in his life was leading to his illness. His failure to live authentically now came in full force. Death was coming for him, but he never truly lived anyways, so there wasn't much to lose.");
@@ -92,7 +93,10 @@ var house = new Location("house", houseDescrip, "journal", "It's been ten years 
 //things aren't too bad
 var cafe = new Location("cafe", cafeDescrip, "coffee", "Coffee is shared between the man and woman. Bittersweet and warm.", "notepad", "The only thing written on the notepad is: 'Light Amidst the Darkness.'");
 
-map.locations.push(unknown, office, battlefield, bar, room, nightclub, house, cafe);
+var unknown2 = new Location("nothingness", nothingnessDescrip)
+
+map.locations.push(unknown, office, battlefield, bar, room, nightclub, house, cafe, unknown2);
+
 
 map.halfConnect(unknown, office);
 map.halfConnect(office, battlefield); 
@@ -101,6 +105,7 @@ map.halfConnect(bar, nightclub);
 map.halfConnect(nightclub, room);
 map.halfConnect(room, house);
 map.halfConnect(house, cafe);
+map.halfConnect(cafe, unknown2)
 
 
 
